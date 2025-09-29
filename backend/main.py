@@ -1,16 +1,17 @@
+# --- IMPORTANTE: load_dotenv() deve ser a primeira coisa a ser executada ---
+from dotenv import load_dotenv
+load_dotenv()
+# --------------------------------------------------------------------------
+
 import os
 import fitz # Importa o PyMuPDF
 from fastapi import FastAPI, File, UploadFile, Form
 from pydantic import BaseModel
 from openai import OpenAI
-from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
-# Carrega as variáveis de ambiente do arquivo .env
-load_dotenv()
-
-# Inicializa o cliente da OpenAI
+# Inicializa o cliente da OpenAI (agora com certeza de que a chave foi carregada)
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Inicializa a aplicação FastAPI
