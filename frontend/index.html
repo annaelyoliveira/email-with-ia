@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF--8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de E-mails com IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Analisador de E-mails com IA 🚀</h1>
+            <p>Cole o texto do seu e-mail abaixo para classificá-lo e obter uma sugestão de resposta.</p>
+        </header>
+
+        <section class="input-section">
+            <textarea id="email-text" placeholder="Cole o conteúdo do e-mail aqui..."></textarea>
+            <button id="analyze-btn">Analisar E-mail</button>
+        </section>
+
+        <section id="results-section" class="hidden">
+            <h2>Resultados da Análise</h2>
+            <div class="result-box">
+                <h3>Categoria</h3>
+                <p id="category-result"></p>
+            </div>
+            <div class="result-box">
+                <h3>Resposta Sugerida</h3>
+                <p id="suggestion-result"></p>
+            </div>
+        </section>
+
+        <div id="loader" class="hidden"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
