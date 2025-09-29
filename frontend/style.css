@@ -1,34 +1,74 @@
-/* (Adicione aqui o CSS do anexo para estilizar a página) */
-/* Este CSS é um exemplo. Sinta-se à vontade para melhorá-lo! */
+/* --- IMPORTAÇÃO DE FONTE (do Google Fonts) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* --- VARIÁVEIS DE CORES (para fácil customização, adaptadas à imagem) --- */
+:root {
+    --bg-image: url('../img/img.jpg'); /* Sua imagem de fundo! */
+    --surface-bg: rgba(255, 255, 255, 0.1); /* Fundo do card principal (transparente) */
+    --input-bg: rgba(255, 255, 255, 0.05); /* Fundo dos inputs (ainda mais transparente) */
+    --primary-accent: #87CEEB; /* Azul claro vibrante (como o brilho da lua) */
+    --text-primary: #E0FFFF; /* Texto principal (quase branco) */
+    --text-secondary: #B0E0E6; /* Texto secundário (azul acinzentado claro) */
+    --border-color: rgba(255, 255, 255, 0.2); /* Borda sutil e mais clara */
+    --error-bg: rgba(255, 99, 71, 0.1); /* Fundo da caixa de erro (tom avermelhado suave) */
+    --error-border: #FF6347; /* Borda da caixa de erro */
+}
+
+/* --- ESTILOS GERAIS --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f4f7f9;
-    color: #333;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-image: var(--bg-image);
+    background-size: cover; /* Cobre todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Fixa a imagem enquanto rola */
+    color: var(--text-primary);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
+    padding: 20px;
+    overflow-y: auto; /* Permite rolar se o conteúdo for grande */
 }
 
+/* --- CONTAINER PRINCIPAL (efeito de vidro) --- */
 .container {
-    background-color: white;
+    background-color: var(--surface-bg);
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
     text-align: center;
+    backdrop-filter: blur(10px); /* O efeito de vidro fosco */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade para Safari */
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
 }
 
+/* --- CABEÇALHO --- */
 header h1 {
-    color: #2c3e50;
+    color: var(--primary-accent);
     margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra para o título */
 }
 
 header p {
-    color: #7f8c8d;
+    color: var(--text-secondary);
     margin-bottom: 30px;
+}
+
+/* --- SEÇÃO DE INPUTS --- */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os elementos */
 }
 
 textarea {
@@ -36,60 +76,119 @@ textarea {
     height: 150px;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg); /* Fundo transparente para textarea */
     font-size: 16px;
+    color: var(--text-primary);
     resize: vertical;
-    box-sizing: border-box;
+    font-family: inherit;
 }
 
-button {
-    background: linear-gradient(45deg, #3498db, #8e44ad);
-    color: white;
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.3);
+}
+
+.separator {
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+/* --- ESTILO CUSTOMIZADO PARA UPLOAD DE ARQUIVO --- */
+.file-label {
+    background-color: var(--input-bg); /* Fundo transparente */
+    border: 1px dashed var(--border-color);
+    color: var(--text-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.file-label:hover {
+    background-color: rgba(135, 206, 235, 0.1); /* Um brilho suave ao passar o mouse */
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+}
+
+#file-name {
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* --- BOTÃO PRINCIPAL DE AÇÃO --- */
+#analyze-btn {
+    background: var(--primary-accent);
+    color: #2D3748; /* Texto escuro para contraste com o botão claro */
     border: none;
     padding: 15px 30px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
+#analyze-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
 }
 
-button:disabled {
-    background: #bdc3c7;
+#analyze-btn:disabled {
+    background: rgba(135, 206, 235, 0.4);
+    color: rgba(255, 255, 255, 0.5);
     cursor: not-allowed;
+    transform: translateY(0);
+    box-shadow: none;
 }
 
+/* --- SEÇÃO DE RESULTADOS --- */
 #results-section {
     margin-top: 30px;
     text-align: left;
 }
 
 .result-box {
-    background-color: #ecf0f1;
+    background-color: var(--input-bg); /* Fundo transparente para as caixas de resultado */
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 15px;
+    border: 1px solid var(--border-color);
 }
 
 .result-box h3 {
     margin-top: 0;
-    color: #2980b9;
+    color: var(--primary-accent);
+    margin-bottom: 10px;
 }
 
+.result-box p {
+    line-height: 1.6;
+}
+
+/* Caixa de erro */
+#error-box {
+    background-color: var(--error-bg);
+    border: 1px solid var(--error-border);
+    color: var(--text-primary);
+}
+
+#error-box h3 {
+    color: var(--error-border);
+}
+
+/* --- LOADER E CLASSES UTILITÁRIAS --- */
 .hidden {
     display: none;
 }
 
-/* Loader Animation */
 #loader {
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid var(--primary-accent);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -97,35 +196,18 @@ button:disabled {
     margin: 20px auto;
 }
 
-.separator {
-    font-weight: bold;
-    color: #7f8c8d;
-    margin: 20px 0;
-}
-
-.file-label {
-    display: inline-block;
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.2s;
-}
-
-.file-label:hover {
-    background-color: #bdc3c7;
-}
-
-#file-name {
-    display: block;
-    margin-top: 10px;
-    color: #7f8c8d;
-    font-style: italic;
-}
-
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* --- RESPONSIVIDADE PARA TELAS MENORES --- */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
 }
