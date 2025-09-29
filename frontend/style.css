@@ -3,12 +3,12 @@
 
 /* --- VARIÁVEIS DE CORES (para fácil customização, adaptadas à imagem) --- */
 :root {
-    --bg-image: url('../img/img.jpg'); /* Sua imagem de fundo! */
-    --surface-bg: rgba(255, 255, 255, 0.1); /* Fundo do card principal (transparente) */
-    --input-bg: rgba(255, 255, 255, 0.05); /* Fundo dos inputs (ainda mais transparente) */
-    --primary-accent: #87CEEB; /* Azul claro vibrante (como o brilho da lua) */
-    --text-primary: #E0FFFF; /* Texto principal (quase branco) */
-    --text-secondary: #B0E0E6; /* Texto secundário (azul acinzentado claro) */
+    --bg-image: url('img/background.jpg'); 
+    --surface-bg: rgba(255, 255, 255, 0.1); 
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --primary-accent: #87CEEB; 
+    --text-primary: #E0FFFF; 
+    --text-secondary: #B0E0E6; 
     --border-color: rgba(255, 255, 255, 0.2); /* Borda sutil e mais clara */
     --error-bg: rgba(255, 99, 71, 0.1); /* Fundo da caixa de erro (tom avermelhado suave) */
     --error-border: #FF6347; /* Borda da caixa de erro */
