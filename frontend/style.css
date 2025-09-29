@@ -97,6 +97,34 @@ button:disabled {
     margin: 20px auto;
 }
 
+.separator {
+    font-weight: bold;
+    color: #7f8c8d;
+    margin: 20px 0;
+}
+
+.file-label {
+    display: inline-block;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.file-label:hover {
+    background-color: #bdc3c7;
+}
+
+#file-name {
+    display: block;
+    margin-top: 10px;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
