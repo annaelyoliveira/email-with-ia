@@ -1,6 +1,6 @@
 // Define a URL do seu backend. Se estiver rodando localmente, será esta.
 // Quando fizer o deploy, você precisará mudar para a URL da sua aplicação no Render.
-const API_URL = 'http://127.0.0.1:8000'; 
+const API_URL = 'https://email-with-ia.onrender.com/'; 
 
 // Seleciona os elementos do HTML
 const emailText = document.getElementById('email-text');
