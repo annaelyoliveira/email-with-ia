@@ -1,5 +1,5 @@
 // A URL da API deve estar configurada para a do Render
-const API_URL = 'https://meu-classificador-email.onrender.com'; // <-- CONFIRME SE ESTA É SUA URL CORRETA
+const API_URL = 'https://email-with-ia.onrender.com/'; // <-- CONFIRME SE ESTA É SUA URL CORRETA
 
 // Seleciona os elementos do HTML
 const emailText = document.getElementById('email-text');
